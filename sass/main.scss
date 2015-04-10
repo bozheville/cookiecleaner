@@ -1,0 +1,66 @@
+//@import url(http://fonts.googleapis.com/css?family=Roboto);
+$color-white:#FFFFFF;
+body{
+  width: 420px;
+  padding: 0;
+  margin: -1px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.action{
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.cookie{
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #aaaaaa;
+  word-wrap: break-word;
+  &:last-of-type{
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  &.danger{
+    background-color: indianred;
+    color: $color-white;
+  }
+  .toggle{
+
+  }
+  span.remove {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+  }
+  .expanded{
+    overflow: hidden;
+    height: 0;
+    transition: height ease .3s;
+    &.visible{
+      height: auto;
+    }
+    table{
+      width: 100%;
+      textarea{
+        width: 90%;
+      }
+    }
+  }
+}
+
+#remove-all{
+  text-align: center;
+  text-transform: uppercase;
+  color: indianred;
+  padding: 10px;
+
+  &:hover {
+    color: #ffffff;
+    background-color: indianred;
+  }
+}
+

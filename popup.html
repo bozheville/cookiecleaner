@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="CookieCleaner">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body ng-controller="main">
+<div class="cookie" ng-repeat="(key, data) in cookies" ng-class="{danger:danger[key]}">
+    <div class="header">
+        <span class="toggle action" ng-click="toggle(key)">{{key}}</span>
+        <span class="remove"
+              ng-click="rmCookie(key);"
+              ng-mouseover="danger[key] = true"
+              ng-mouseleave="danger[key] = false"
+                >[ X ]</span>
+    </div>
+    <div class="expanded" ng-class="{visible: expanded === key}">
+        <table>
+            <tr>
+                <th>Value</th>
+                <td><textarea ng-change="save(key)" ng-model="cookies[key].value"></textarea></td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{data.path}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="remove-all" class="action" ng-click="rmAllCookies();">Remove All</div>
+
+<script src="bower_components/underscore/underscore-min.js" type="text/javascript"></script>
+<script src="bower_components/angularjs/angular.min.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
+</body>
+</html>

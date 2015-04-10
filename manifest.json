@@ -1,0 +1,23 @@
+{
+  "name": "Cookie cleaner",
+  "version": "1.0",
+  "description": "Allows to delete site cookies",
+  "permissions": [
+    "browsingData",
+    "cookies",
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "page_action": {
+    "default_name": "Display Map",
+    "default_icon": "cookie16.png",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'unsafe-eval'; object-src 'self'"
+}
